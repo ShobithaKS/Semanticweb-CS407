@@ -1,0 +1,1262 @@
+@prefix : <http://www.movie.com/ontologies/Movie_MND.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.movie.com/ontologies/Movie_Project.owl> .
+
+<http://www.movie.com/ontologies/Movie_Project.owl> rdf:type owl:Ontology ;
+                                                    
+                                                    rdfs:comment """Movie Ontology
+
+Group members:
+Manjushri Dhole
+Shobitha Kadandelu Shrinivasa""" .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasActor
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasActor> rdf:type owl:FunctionalProperty ,
+                                                                      owl:ObjectProperty ;
+                                                             
+                                                             rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Actor> ;
+                                                             
+                                                             rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                             
+                                                             owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isActorOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasActress
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasActress> rdf:type owl:FunctionalProperty ,
+                                                                        owl:ObjectProperty ;
+                                                               
+                                                               rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Actress> ;
+                                                               
+                                                               rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                               
+                                                               owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isActressOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasCountry
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> rdf:type owl:FunctionalProperty ,
+                                                                        owl:ObjectProperty ;
+                                                               
+                                                               rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#CountryOfOrigin> ;
+                                                               
+                                                               rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasDirector
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> rdf:type owl:FunctionalProperty ,
+                                                                         owl:ObjectProperty ;
+                                                                
+                                                                rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Director> ;
+                                                                
+                                                                rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                                
+                                                                owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isDirectorOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasEditor
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> rdf:type owl:FunctionalProperty ,
+                                                                       owl:ObjectProperty ;
+                                                              
+                                                              rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Editor> ;
+                                                              
+                                                              rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                              
+                                                              owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isEditorOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasGenre
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasGenre> rdf:type owl:FunctionalProperty ,
+                                                                      owl:ObjectProperty ;
+                                                             
+                                                             rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Genre> ;
+                                                             
+                                                             rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                             
+                                                             owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isOfGenre> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasLanguage
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasLanguage> rdf:type owl:FunctionalProperty ,
+                                                                         owl:ObjectProperty ;
+                                                                
+                                                                rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Language> ;
+                                                                
+                                                                rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                                
+                                                                owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isLanguageOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasMusicComposer
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasMusicComposer> rdf:type owl:FunctionalProperty ,
+                                                                              owl:ObjectProperty ;
+                                                                     
+                                                                     rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasProducer
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> rdf:type owl:FunctionalProperty ,
+                                                                         owl:ObjectProperty ;
+                                                                
+                                                                rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                                
+                                                                rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Producer> ;
+                                                                
+                                                                owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isProducerOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasRemake
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasRemake> rdf:type owl:FunctionalProperty ,
+                                                                       owl:ObjectProperty ;
+                                                              
+                                                              rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                              
+                                                              rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Remake> ;
+                                                              
+                                                              owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isRemakeOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasSequel
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasSequel> rdf:type owl:ObjectProperty ;
+                                                              
+                                                              rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                              
+                                                              rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Sequel> ;
+                                                              
+                                                              owl:inverseOf <http://www.movie.com/ontologies/Movie_Project.owl#isSequelOf> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasVoiceArtist
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasVoiceArtist> rdf:type owl:ObjectProperty ;
+                                                                   
+                                                                   rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                                   
+                                                                   rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#VoiceArtist> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isActorOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isActorOf> rdf:type owl:FunctionalProperty ,
+                                                                       owl:ObjectProperty ;
+                                                              
+                                                              rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Actor> ;
+                                                              
+                                                              rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isActressOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isActressOf> rdf:type owl:FunctionalProperty ,
+                                                                         owl:ObjectProperty ;
+                                                                
+                                                                rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Actress> ;
+                                                                
+                                                                rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isCostumeDesignerFor
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isCostumeDesignerFor> rdf:type owl:FunctionalProperty ,
+                                                                                  owl:ObjectProperty ;
+                                                                         
+                                                                         rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isDirectorOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isDirectorOf> rdf:type owl:FunctionalProperty ,
+                                                                          owl:ObjectProperty ;
+                                                                 
+                                                                 rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Director> ;
+                                                                 
+                                                                 rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isEditorOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isEditorOf> rdf:type owl:FunctionalProperty ,
+                                                                        owl:ObjectProperty ;
+                                                               
+                                                               rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Editor> ;
+                                                               
+                                                               rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isLanguageOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isLanguageOf> rdf:type owl:FunctionalProperty ,
+                                                                          owl:ObjectProperty ;
+                                                                 
+                                                                 rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isOfGenre
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isOfGenre> rdf:type owl:FunctionalProperty ,
+                                                                       owl:ObjectProperty ;
+                                                              
+                                                              rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Genre> ;
+                                                              
+                                                              rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isOriginal
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isOriginal> rdf:type owl:FunctionalProperty ,
+                                                                        owl:ObjectProperty ;
+                                                               
+                                                               rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isProducerOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isProducerOf> rdf:type owl:FunctionalProperty ,
+                                                                          owl:ObjectProperty ;
+                                                                 
+                                                                 rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                                 
+                                                                 rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isRemakeOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isRemakeOf> rdf:type owl:FunctionalProperty ,
+                                                                        owl:ObjectProperty ;
+                                                               
+                                                               rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                               
+                                                               rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Remake> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#isSequelOf
+
+<http://www.movie.com/ontologies/Movie_Project.owl#isSequelOf> rdf:type owl:FunctionalProperty ,
+                                                                        owl:ObjectProperty ;
+                                                               
+                                                               rdfs:range <http://www.movie.com/ontologies/Movie_Project.owl#Movies> ;
+                                                               
+                                                               rdfs:domain <http://www.movie.com/ontologies/Movie_Project.owl#Sequel> .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#IMDBrating
+
+<http://www.movie.com/ontologies/Movie_Project.owl#IMDBrating> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#boxOfficeCollections
+
+<http://www.movie.com/ontologies/Movie_Project.owl#boxOfficeCollections> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#duration-mins
+
+<http://www.movie.com/ontologies/Movie_Project.owl#duration-mins> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#hasWonOscars
+
+<http://www.movie.com/ontologies/Movie_Project.owl#hasWonOscars> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#language
+
+<http://www.movie.com/ontologies/Movie_Project.owl#language> rdf:type owl:DatatypeProperty .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#releaseDate
+
+<http://www.movie.com/ontologies/Movie_Project.owl#releaseDate> rdf:type owl:DatatypeProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#AWalkToRemember
+
+<http://www.movie.com/ontologies/Movie_Project.owl#AWalkToRemember> rdf:type owl:Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Romance> ;
+                                                                    
+                                                                    owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#Titanic> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Action
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Action> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Genre> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Action-adventure
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Action-adventure> rdf:type owl:Class ;
+                                                                     
+                                                                     rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Action-comedy
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Action-comedy> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Action-thriller
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Action-thriller> rdf:type owl:Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Actor
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Actor> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Crew> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Actress
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Actress> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Crew> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#AllyMaki
+
+<http://www.movie.com/ontologies/Movie_Project.owl#AllyMaki> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#VoiceArtist> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Animation
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Animation> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Genre> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#AnneHathaway
+
+<http://www.movie.com/ontologies/Movie_Project.owl#AnneHathaway> rdf:type owl:Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actress> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Avatar
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Avatar> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action-adventure> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                             owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#USA>
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                             owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JamesCameron>
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> ;
+                                                                             owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JohnRefoua>
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                             owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JonLandau>
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActress> ;
+                                                                             owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#ZoeSaldana>
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                             owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#SamWorthington>
+                                                                           ] ;
+                                                           
+                                                           owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#TheDarkKnightRises> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#AxelGeddes
+
+<http://www.movie.com/ontologies/Movie_Project.owl#AxelGeddes> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Editor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#BangBang
+
+<http://www.movie.com/ontologies/Movie_Project.owl#BangBang> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Remake> ;
+                                                             
+                                                             owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#GameOver> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#BarbaraBroccoli
+
+<http://www.movie.com/ontologies/Movie_Project.owl#BarbaraBroccoli> rdf:type owl:Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#BruceAlmighty
+
+<http://www.movie.com/ontologies/Movie_Project.owl#BruceAlmighty> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Comedy> ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                                    owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JimCarrey>
+                                                                                  ] ;
+                                                                  
+                                                                  owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#TheMask> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#CameronDiaz
+
+<http://www.movie.com/ontologies/Movie_Project.owl#CameronDiaz> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actress> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#CasinoRoyale
+
+<http://www.movie.com/ontologies/Movie_Project.owl#CasinoRoyale> rdf:type owl:Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action-comedy> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                                   owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#USA>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActress> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#EvaGreen>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#MartinCampbell>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#StuartBaird>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#DanielCraig>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#BarbaraBroccoli>
+                                                                                 ] ;
+                                                                 
+                                                                 owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#KnightandDay> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#CathyKonrad
+
+<http://www.movie.com/ontologies/Movie_Project.owl#CathyKonrad> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#ChrisWedge
+
+<http://www.movie.com/ontologies/Movie_Project.owl#ChrisWedge> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Director> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#ChristianBale
+
+<http://www.movie.com/ontologies/Movie_Project.owl#ChristianBale> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#ChristopherNolan
+
+<http://www.movie.com/ontologies/Movie_Project.owl#ChristopherNolan> rdf:type owl:Class ;
+                                                                     
+                                                                     rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Director> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#ClintEastwood
+
+<http://www.movie.com/ontologies/Movie_Project.owl#ClintEastwood> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Director> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Comedy
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Comedy> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Genre> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#CountryOfOrigin
+
+<http://www.movie.com/ontologies/Movie_Project.owl#CountryOfOrigin> rdf:type owl:Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Crew
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Crew> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#DanielCraig
+
+<http://www.movie.com/ontologies/Movie_Project.owl#DanielCraig> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#DennisLeary
+
+<http://www.movie.com/ontologies/Movie_Project.owl#DennisLeary> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#VoiceArtist> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Director
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Director> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Crew> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Editor
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Editor> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Crew> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#EllenPage
+
+<http://www.movie.com/ontologies/Movie_Project.owl#EllenPage> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actress> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#EmmaThomas
+
+<http://www.movie.com/ontologies/Movie_Project.owl#EmmaThomas> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#EvaGreen
+
+<http://www.movie.com/ontologies/Movie_Project.owl#EvaGreen> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actress> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#GameOver
+
+<http://www.movie.com/ontologies/Movie_Project.owl#GameOver> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Remake> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Genre
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Genre> rdf:type owl:Class ;
+                                                          
+                                                          rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Horror
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Horror> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Genre> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#IceAge1
+
+<http://www.movie.com/ontologies/Movie_Project.owl#IceAge1> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Animation> ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                              owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#England>
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasVoiceArtist> ;
+                                                                              owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                   owl:intersectionOf ( <http://www.movie.com/ontologies/Movie_Project.owl#DennisLeary>
+                                                                                                                        <http://www.movie.com/ontologies/Movie_Project.owl#JordanPeele>
+                                                                                                                      )
+                                                                                                 ]
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                              owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#ChrisWedge>
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> ;
+                                                                              owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JohnCarnochan>
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                              owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#LoriForte>
+                                                                            ] ;
+                                                            
+                                                            owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#ToyStory4> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#IceAge2
+
+<http://www.movie.com/ontologies/Movie_Project.owl#IceAge2> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Sequel> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Inception
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Inception> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action-thriller> ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                                owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#ChristopherNolan>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                                owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#USA>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                                owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#EmmaThomas>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActress> ;
+                                                                                owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#EllenPage>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                                owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#LeonardoDiCaprio>
+                                                                              ] ;
+                                                              
+                                                              owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#MysticRiver> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JamesCameron
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JamesCameron> rdf:type owl:Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Director> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JamesMangold
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JamesMangold> rdf:type owl:Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Director> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Jaws
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Jaws> rdf:type owl:Class ;
+                                                         
+                                                         rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Horror> ;
+                                                         
+                                                         owl:disjointWith <http://www.movie.com/ontologies/Movie_Project.owl#TheExorcist> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JimCarrey
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JimCarrey> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JoelCox
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JoelCox> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Editor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JohnCarnochan
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JohnCarnochan> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Editor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JohnRefoua
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JohnRefoua> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Editor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JonLandau
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JonLandau> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JonasRivera
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JonasRivera> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JordanPeele
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JordanPeele> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#VoiceArtist> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#JoshCooley
+
+<http://www.movie.com/ontologies/Movie_Project.owl#JoshCooley> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Director> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#KnightandDay
+
+<http://www.movie.com/ontologies/Movie_Project.owl#KnightandDay> rdf:type owl:Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action-comedy> ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                                   owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#USA>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#MichaelMcCusker>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JamesMangold>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#CathyKonrad>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActress> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#CameronDiaz>
+                                                                                 ] ,
+                                                                                 [ rdf:type owl:Restriction ;
+                                                                                   owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                                   owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#TomCruise>
+                                                                                 ] .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Language
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Language> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#LeeSmith
+
+<http://www.movie.com/ontologies/Movie_Project.owl#LeeSmith> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Editor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#LeonardoDiCaprio
+
+<http://www.movie.com/ontologies/Movie_Project.owl#LeonardoDiCaprio> rdf:type owl:Class ;
+                                                                     
+                                                                     rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#LoriForte
+
+<http://www.movie.com/ontologies/Movie_Project.owl#LoriForte> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#MarciaGayHarden
+
+<http://www.movie.com/ontologies/Movie_Project.owl#MarciaGayHarden> rdf:type owl:Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actress> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#MartinCampbell
+
+<http://www.movie.com/ontologies/Movie_Project.owl#MartinCampbell> rdf:type owl:Class ;
+                                                                   
+                                                                   rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Director> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#MichaelMcCusker
+
+<http://www.movie.com/ontologies/Movie_Project.owl#MichaelMcCusker> rdf:type owl:Class ;
+                                                                    
+                                                                    rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Editor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Movies
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Movies> rdf:type owl:Class .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#MysticRiver
+
+<http://www.movie.com/ontologies/Movie_Project.owl#MysticRiver> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action-thriller> ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                                  owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#ClintEastwood>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                                  owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#USA>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                                  owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#RobertLorenz>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActress> ;
+                                                                                  owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#MarciaGayHarden>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                                  owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#SeanPenn>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> ;
+                                                                                  owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JoelCox>
+                                                                                ] .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Producer
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Producer> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Crew> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Remake
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Remake> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#RobertLorenz
+
+<http://www.movie.com/ontologies/Movie_Project.owl#RobertLorenz> rdf:type owl:Class ;
+                                                                 
+                                                                 rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Producer> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Romance
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Romance> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Genre> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#SamWorthington
+
+<http://www.movie.com/ontologies/Movie_Project.owl#SamWorthington> rdf:type owl:Class ;
+                                                                   
+                                                                   rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#SeanPenn
+
+<http://www.movie.com/ontologies/Movie_Project.owl#SeanPenn> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Sequel
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Sequel> rdf:type owl:Class ;
+                                                           
+                                                           rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Movies> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#StuartBaird
+
+<http://www.movie.com/ontologies/Movie_Project.owl#StuartBaird> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Editor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#TheDarkKnightRises
+
+<http://www.movie.com/ontologies/Movie_Project.owl#TheDarkKnightRises> rdf:type owl:Class ;
+                                                                       
+                                                                       rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Action-adventure> ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                                         owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#EmmaThomas>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> ;
+                                                                                         owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#LeeSmith>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                                         owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#ChristopherNolan>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                                         owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#ChristianBale>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                                         owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#USA>
+                                                                                       ] ,
+                                                                                       [ rdf:type owl:Restriction ;
+                                                                                         owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActress> ;
+                                                                                         owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#AnneHathaway>
+                                                                                       ] .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#TheExorcist
+
+<http://www.movie.com/ontologies/Movie_Project.owl#TheExorcist> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Horror> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#TheMask
+
+<http://www.movie.com/ontologies/Movie_Project.owl#TheMask> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Comedy> ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasActor> ;
+                                                                              owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JimCarrey>
+                                                                            ] .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Titanic
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Titanic> rdf:type owl:Class ;
+                                                            
+                                                            rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Romance> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#TomCruise
+
+<http://www.movie.com/ontologies/Movie_Project.owl#TomCruise> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actor> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#TomHanks
+
+<http://www.movie.com/ontologies/Movie_Project.owl#TomHanks> rdf:type owl:Class ;
+                                                             
+                                                             rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#VoiceArtist> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#ToyStory3
+
+<http://www.movie.com/ontologies/Movie_Project.owl#ToyStory3> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Sequel> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#ToyStory4
+
+<http://www.movie.com/ontologies/Movie_Project.owl#ToyStory4> rdf:type owl:Class ;
+                                                              
+                                                              rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Animation> ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasCountry> ;
+                                                                                owl:hasValue <http://www.movie.com/ontologies/Movie_Project.owl#USA>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasProducer> ;
+                                                                                owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JonasRivera>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasDirector> ;
+                                                                                owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#JoshCooley>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasEditor> ;
+                                                                                owl:someValuesFrom <http://www.movie.com/ontologies/Movie_Project.owl#AxelGeddes>
+                                                                              ] ,
+                                                                              [ rdf:type owl:Restriction ;
+                                                                                owl:onProperty <http://www.movie.com/ontologies/Movie_Project.owl#hasVoiceArtist> ;
+                                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                     owl:intersectionOf ( <http://www.movie.com/ontologies/Movie_Project.owl#AllyMaki>
+                                                                                                                          <http://www.movie.com/ontologies/Movie_Project.owl#TomHanks>
+                                                                                                                        )
+                                                                                                   ]
+                                                                              ] .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#VoiceArtist
+
+<http://www.movie.com/ontologies/Movie_Project.owl#VoiceArtist> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Crew> .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#ZoeSaldana
+
+<http://www.movie.com/ontologies/Movie_Project.owl#ZoeSaldana> rdf:type owl:Class ;
+                                                               
+                                                               rdfs:subClassOf <http://www.movie.com/ontologies/Movie_Project.owl#Actress> .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#England
+
+<http://www.movie.com/ontologies/Movie_Project.owl#England> rdf:type <http://www.movie.com/ontologies/Movie_Project.owl#CountryOfOrigin> ,
+                                                                     owl:NamedIndividual .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#India
+
+<http://www.movie.com/ontologies/Movie_Project.owl#India> rdf:type <http://www.movie.com/ontologies/Movie_Project.owl#CountryOfOrigin> ,
+                                                                   owl:NamedIndividual .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Info-Inception
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Info-Inception> rdf:type <http://www.movie.com/ontologies/Movie_Project.owl#Inception> ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   <http://www.movie.com/ontologies/Movie_Project.owl#hasWonOscars> "True" ;
+                                                                   
+                                                                   <http://www.movie.com/ontologies/Movie_Project.owl#duration-mins> "148" ;
+                                                                   
+                                                                   <http://www.movie.com/ontologies/Movie_Project.owl#boxOfficeCollections> "836800000" ;
+                                                                   
+                                                                   <http://www.movie.com/ontologies/Movie_Project.owl#IMDBrating> "9.8" ;
+                                                                   
+                                                                   <http://www.movie.com/ontologies/Movie_Project.owl#releaseDate> "Jul 8 2010" ;
+                                                                   
+                                                                   <http://www.movie.com/ontologies/Movie_Project.owl#language> "English" .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#Info-MysticRiver
+
+<http://www.movie.com/ontologies/Movie_Project.owl#Info-MysticRiver> rdf:type <http://www.movie.com/ontologies/Movie_Project.owl#MysticRiver> ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     <http://www.movie.com/ontologies/Movie_Project.owl#boxOfficeCollections> "156000000" ;
+                                                                     
+                                                                     <http://www.movie.com/ontologies/Movie_Project.owl#IMDBrating> "8.2" ;
+                                                                     
+                                                                     <http://www.movie.com/ontologies/Movie_Project.owl#duration-mins> "137" ;
+                                                                     
+                                                                     <http://www.movie.com/ontologies/Movie_Project.owl#releaseDate> "Oct 15 2003" ;
+                                                                     
+                                                                     <http://www.movie.com/ontologies/Movie_Project.owl#hasWonOscars> "False" ;
+                                                                     
+                                                                     <http://www.movie.com/ontologies/Movie_Project.owl#language> "English" .
+
+
+
+###  http://www.movie.com/ontologies/Movie_Project.owl#USA
+
+<http://www.movie.com/ontologies/Movie_Project.owl#USA> rdf:type <http://www.movie.com/ontologies/Movie_Project.owl#CountryOfOrigin> ,
+                                                                 owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.movie.com/ontologies/Movie_Project.owl#Action-adventure>
+                <http://www.movie.com/ontologies/Movie_Project.owl#Action-comedy>
+                <http://www.movie.com/ontologies/Movie_Project.owl#Action-thriller>
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.movie.com/ontologies/Movie_Project.owl#Action>
+                <http://www.movie.com/ontologies/Movie_Project.owl#Animation>
+                <http://www.movie.com/ontologies/Movie_Project.owl#Comedy>
+                <http://www.movie.com/ontologies/Movie_Project.owl#Horror>
+                <http://www.movie.com/ontologies/Movie_Project.owl#Romance>
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
